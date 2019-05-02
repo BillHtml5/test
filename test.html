@@ -9,13 +9,34 @@
             display: block;
 
         }
+        button{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
     </style>
 </head>
 <body>
     <canvas id="canvas" width=300 height=300></canvas>
-
+    <button id="eraser">橡皮擦</button>
     <script>
         var yyy=document.getElementById('canvas');
+        prt()
+
+        window.onresize =function(){
+            prt()
+
+        }
+
+        function prt(){
+        var pageWidth=document.documentElement.clientWidth
+        var pageHeight=document.documentElement.clientHeight
+
+        yyy.width = pageWidth
+        yyy.height= pageHeight
+
+        }
+
         var context=yyy.getContext('2d');
 
         function drawCircle(x,y,redius){
@@ -32,7 +53,7 @@
             var x=aaa.clientX
             var y=aaa.clientY
             var lastPoint={"x":x,"y":y}
-            drawCircle(x,y,1)
+          
         }
 
         yyy.onmousemove=function(aaa){
@@ -41,7 +62,6 @@
             var y=aaa.clientY
             var newPoint={"x":x,"y":y}
             
-            drawCircle(x,y,1)
             drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y) 
             lastPoint=newPoint
             }
@@ -60,6 +80,11 @@
             context.stroke()
             context.closePath()
 
+        }
+
+        var usingEraser =false
+        eraser.onclick =function(){
+            usingEraser=!usingEraser
         }
 
     </script>
