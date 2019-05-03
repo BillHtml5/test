@@ -38,7 +38,7 @@ function listenMouse(yyy) {
         var y = aaa.clientY
         painting = true
         if (usingEraser) {
-            context.clearRect(x - 5, y - 5, 10, 10)
+            context.clearRect(x-10, y-10, 10, 10)
         } else {                  
             var lastPoint = { "x": x, "y": y }
         }
@@ -49,11 +49,11 @@ function listenMouse(yyy) {
         var y = aaa.clientY
         if(!painting){return}
         if (usingEraser) {                  
-            context.clearRect(x - 5, y - 5, 10, 10)
+            context.clearRect(x-10, y-10, 10, 10)
         } else {
             var newPoint = { "x": x, "y": y }
         }
-        drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+        drawLine(lastPoint.x,lastPoint.y, newPoint.x,newPoint.y)
         lastPoint = newPoint
     }
 
@@ -77,4 +77,27 @@ function listenMouse(yyy) {
         context.arc(x, y, redius, 0, Math.PI * 2);
         context.fill()
     }
+
 }
+
+// if(document.body.ontouchstart !== undefined){
+//     //触屏设备
+//     canvas.ontouchstart = function(){
+//         console.log('开始摸我了')
+  
+//     }
+//     canvas.ontouchmove = function(){
+      
+//     }
+//     canvas.ontouchend = function(){
+//         console.log('摸完了')
+      
+//     }
+// }else{
+//     //非触屏设备
+
+    
+// }
+
+
+
