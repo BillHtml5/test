@@ -51,38 +51,8 @@ function drawCircle(x, y, redius) {
 function listenMouse(yyy) {
     var painting = false
     var lastPoint = { x: undefined, y: undefined }
-    yyy.onmousedown = function (aaa) {
 
-        var x = aaa.clientX
-        var y = aaa.clientY
-        painting = true
-        if (usingEraser) {
-            context.clearRect(x - 10, y - 10, 10, 10)
-        } else {
-            var lastPoint = { "x": x, "y": y }
-        }
-    }
-
-    yyy.onmousemove = function (aaa) {
-        var x = aaa.clientX
-        var y = aaa.clientY
-        if (!painting) { return }
-        if (usingEraser) {
-            context.clearRect(x - 10, y - 10, 10, 10)
-        } else {
-            var newPoint = { "x": x, "y": y }
-            drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
-            lastPoint = newPoint
-        }
-
-    }
-
-    yyy.onmouseup = function (aaa) {
-        painting = false
-    }
-
-}
-
+    //特性监控 
 if (document.body.ontouchstart !== undefined) {
     //触屏设备
     canvas.ontouchstart = function () {
@@ -90,7 +60,7 @@ if (document.body.ontouchstart !== undefined) {
 
     }
     canvas.ontouchmove = function () {
-
+        console.log('边动边摸')
     }
     canvas.ontouchend = function () {
         console.log('摸完了')
@@ -131,6 +101,45 @@ if (document.body.ontouchstart !== undefined) {
     }
 
 }
+
+
+    yyy.onmousedown = function (aaa) {
+
+        var x = aaa.clientX
+        var y = aaa.clientY
+        painting = true
+        if (usingEraser) {
+            context.clearRect(x - 10, y - 10, 10, 10)
+        } else {
+            var lastPoint = { "x": x, "y": y }
+        }
+    }
+
+    yyy.onmousemove = function (aaa) {
+        var x = aaa.clientX
+        var y = aaa.clientY
+        if (!painting) { return }
+        if (usingEraser) {
+            context.clearRect(x - 10, y - 10, 10, 10)
+        } else {
+            var newPoint = { "x": x, "y": y }
+            drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+            lastPoint = newPoint
+        }
+
+    }
+
+    yyy.onmouseup = function (aaa) {
+        painting = false
+    }
+
+}
+
+
+
+
+
+
 
 
 
