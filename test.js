@@ -5,12 +5,12 @@ listenMouse(yyy)
 
 var usingEraser = false
 eraser.onclick = function () {
-    usingEraser=true
-    actions.className='actions x'
+    usingEraser = true
+    actions.className = 'actions x'
 }
 brush.onclick = function () {
     usingEraser = false
-    actions.className='actions'
+    actions.className = 'actions'
 }
 
 
@@ -29,6 +29,25 @@ function setCanvas() {
     }
 }
 
+function drawLine(x1, y1, x2, y2) {
+    context.beginPath();
+    context.strokeStyle = 'black'
+    context.moveTo(x1, y1)
+    context.lineWidth = 5
+    context.lineTo(x2, y2)
+    context.stroke()
+    context.closePath()
+}
+
+function drawCircle(x, y, redius) {
+    context.beginPath()
+    context.fillStyle = 'black'
+    context.arc(x, y, redius, 0, Math.PI * 2);
+    context.fill()
+}
+
+
+
 function listenMouse(yyy) {
     var painting = false
     var lastPoint = { x: undefined, y: undefined }
@@ -38,8 +57,8 @@ function listenMouse(yyy) {
         var y = aaa.clientY
         painting = true
         if (usingEraser) {
-            context.clearRect(x-10, y-10, 10, 10)
-        } else {                  
+            context.clearRect(x - 10, y - 10, 10, 10)
+        } else {
             var lastPoint = { "x": x, "y": y }
         }
     }
@@ -47,57 +66,71 @@ function listenMouse(yyy) {
     yyy.onmousemove = function (aaa) {
         var x = aaa.clientX
         var y = aaa.clientY
-        if(!painting){return}
-        if (usingEraser) {                  
-            context.clearRect(x-10, y-10, 10, 10)
+        if (!painting) { return }
+        if (usingEraser) {
+            context.clearRect(x - 10, y - 10, 10, 10)
         } else {
             var newPoint = { "x": x, "y": y }
+            drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+            lastPoint = newPoint
         }
-        drawLine(lastPoint.x,lastPoint.y, newPoint.x,newPoint.y)
-        lastPoint = newPoint
+
     }
 
     yyy.onmouseup = function (aaa) {
         painting = false
     }
 
-    function drawLine(x1, y1, x2, y2) {
-        context.beginPath();
-        context.strokeStyle = 'black'
-        context.moveTo(x1, y1)
-        context.lineWidth = 5
-        context.lineTo(x2, y2)
-        context.stroke()
-        context.closePath()
+}
+
+if (document.body.ontouchstart !== undefined) {
+    //触屏设备
+    canvas.ontouchstart = function () {
+        console.log('开始摸我了')
+
+    }
+    canvas.ontouchmove = function () {
+
+    }
+    canvas.ontouchend = function () {
+        console.log('摸完了')
+
+    }
+} else {
+    // //非触屏设备
+    var painting = false
+    var lastPoint = { x: undefined, y: undefined }
+    yyy.onmousedown = function (aaa) {
+
+        var x = aaa.clientX
+        var y = aaa.clientY
+        painting = true
+        if (usingEraser) {
+            context.clearRect(x - 10, y - 10, 10, 10)
+        } else {
+            var lastPoint = { "x": x, "y": y }
+        }
     }
 
-    function drawCircle(x, y, redius) {
-        context.beginPath()
-        context.fillStyle = 'black'
-        context.arc(x, y, redius, 0, Math.PI * 2);
-        context.fill()
+    yyy.onmousemove = function (aaa) {
+        var x = aaa.clientX
+        var y = aaa.clientY
+        if (!painting) { return }
+        if (usingEraser) {
+            context.clearRect(x - 10, y - 10, 10, 10)
+        } else {
+            var newPoint = { "x": x, "y": y }
+            drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+            lastPoint = newPoint
+        }
+
+    }
+
+    yyy.onmouseup = function (aaa) {
+        painting = false
     }
 
 }
-
-// if(document.body.ontouchstart !== undefined){
-//     //触屏设备
-//     canvas.ontouchstart = function(){
-//         console.log('开始摸我了')
-  
-//     }
-//     canvas.ontouchmove = function(){
-      
-//     }
-//     canvas.ontouchend = function(){
-//         console.log('摸完了')
-      
-//     }
-// }else{
-//     //非触屏设备
-
-    
-// }
 
 
 
