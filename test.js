@@ -55,16 +55,35 @@ function listenMouse(yyy) {
     //特性监控 
 if (document.body.ontouchstart !== undefined) {
     //触屏设备
-    canvas.ontouchstart = function () {
+    canvas.ontouchstart = function (aaa) {
+        
         console.log('开始摸我了')
+        console.log(aaa)
+        var x = aaa.touches[0].clientX
+        var y = aaa.touches[0].clientY
+        painting = true
+        if (usingEraser) {
+            context.clearRect(x - 10, y - 10, 10, 10)
+        } else {
+            var lastPoint = { "x": x, "y": y }
+        }
 
     }
-    canvas.ontouchmove = function () {
-        console.log('边动边摸')
+    canvas.ontouchmove = function (aaa) {
+        var x = aaa.touches[0].clientX
+        var y = aaa.touches[0].clientY
+        if (!painting) { return }
+        if (usingEraser) {
+            context.clearRect(x - 10, y - 10, 10, 10)
+        } else {
+            var newPoint = { "x": x, "y": y }
+            drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+            lastPoint = newPoint
+        }
     }
     canvas.ontouchend = function () {
         console.log('摸完了')
-
+        painting=false
     }
 } else {
     // //非触屏设备
