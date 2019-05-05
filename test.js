@@ -16,6 +16,19 @@ eraser.onclick=function(){
     pen.classList.remove('active')
 }
 
+red.onclick=function(){
+    context.fillStyle='red'
+    context.strokeStyle='red'
+}
+green.onclick=function(){
+    context.fillStyle='green'
+    context.strokeStyle='green'
+}
+blue.onclick=function(){
+    context.fillStyle='blue'
+    context.strokeStyle='blue'
+}
+
 
 //----------------------------------------------
 function setCanvas() {
@@ -34,7 +47,7 @@ function setCanvas() {
 
 function drawLine(x1, y1, x2, y2) {
     context.beginPath();
-    context.strokeStyle = 'black'
+   
     context.moveTo(x1, y1)
     context.lineWidth = 5
     context.lineTo(x2, y2)
