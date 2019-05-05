@@ -4,6 +4,14 @@ setCanvas(yyy)
 listenMouse(yyy)
 
 var usingEraser = false
+
+pen.onclick=function(){
+    usingEraser=false
+}
+eraser.onclick=function{
+    usingEraser=true
+}
+
 eraser.onclick = function () {
     usingEraser = true
     actions.className = 'actions x'

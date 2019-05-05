@@ -17,15 +17,10 @@ body{
 
 .actions{
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
 }
-.actions > #brush{
-    display: none;
-}
-.actions.x > #brush{
-    display: inline-block;
-}
-.actions.x > #eraser{
-    display: none;
+.actions svg{
+    width: 2.5em;
+    height: 2.5em;
 }
