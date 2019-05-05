@@ -43,7 +43,7 @@ body{
 .colors{
     position: fixed;
     top: 60px;
-    left: 28px;
+    left: -10px;
 }
 
 .colors> li{
@@ -51,6 +51,7 @@ body{
     height: 20px;
     border-radius: 50%;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    padding: 5px;
 }
 
 .colors> li.red{
