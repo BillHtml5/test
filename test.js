@@ -86,6 +86,7 @@ if (document.body.ontouchstart !== undefined) {
 
     }
     canvas.ontouchmove = function (aaa) {
+        console.log('边摸变动')
         var x = aaa.touches[0].clientX
         var y = aaa.touches[0].clientY
         if (!painting) { return }
