@@ -7,18 +7,13 @@ var usingEraser = false
 
 pen.onclick=function(){
     usingEraser=false
+    pen.classList.add('active')
+    eraser.classList.remove('active')
 }
-eraser.onclick=function{
+eraser.onclick=function(){
     usingEraser=true
-}
-
-eraser.onclick = function () {
-    usingEraser = true
-    actions.className = 'actions x'
-}
-brush.onclick = function () {
-    usingEraser = false
-    actions.className = 'actions'
+    eraser.classList.add('active')
+    pen.classList.remove('active')
 }
 
 
