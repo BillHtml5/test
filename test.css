@@ -17,7 +17,9 @@ ol li {
 #canvas {
 	background: ghostwhite;
 	display: block;
-
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 
 body {
@@ -62,6 +64,30 @@ body {
 }
 
 
+.colors>li.black {
+	background: black;
+}
+
+.colors>li.red {
+	background: red;
+}
+
+.colors>li.green {
+	background: green;
+}
+.colors>li.blue {
+	background: blue;
+}
+.colors>li.active{
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
+	transform: scale(1.2);
+	
+}
+/* //------------------------------------------- */
+/* .colors>li.black:hover {
+	transform: scale(1.2);
+}
+
 .colors>li.red {
 	background: red;
 }
@@ -83,5 +109,5 @@ body {
 .colors>li.blue:hover {
 	transform: scale(1.2);
 }
-
+ */
 
