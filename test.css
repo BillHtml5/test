@@ -21,7 +21,7 @@ ol li {
 }
 
 body {
-	margin: 0px;
+	overflow: hidden;
 }
 
 
@@ -29,12 +29,12 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	padding: 20px;
+	padding: 15px;
 }
 
 .actions svg {
-	width: 1em;
-	height: 1em;
+	width: 1.5em;
+	height: 1.5em;
 	transition: all 0.3s;
 	margin: 0 10px;
 }
@@ -47,8 +47,8 @@ body {
 
 .colors {
 	position: fixed;
-	top: 60px;
-	left: -10px;
+	top: 50px;
+	left: -14px;
 }
 
 .colors>li {
