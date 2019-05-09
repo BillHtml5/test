@@ -44,13 +44,14 @@ body {
 .actions svg.active {
 	fill: red;
 	transform: scale(1.2);
+	
 
 }
-
 .colors {
 	position: fixed;
 	top: 50px;
 	left: -14px;
+	
 }
 
 .colors>li {
