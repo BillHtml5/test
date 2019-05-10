@@ -1,4 +1,3 @@
-
 var yyy = document.getElementById('canvas');
 var context = yyy.getContext('2d');
 setCanvas(yyy)
@@ -11,13 +10,15 @@ pen.onclick = function() {
 	pen.classList.add('active')
 	eraser.classList.remove('active')
 }
+
 eraser.onclick = function() {
 	usingEraser = true
 	eraser.classList.add('active')
 	pen.classList.remove('active')
 }
-clean.onclick=function(){
-	context.clearRect(0,0,yyy.width,yyy.height);
+
+clean.onclick = function() {
+	context.clearRect(0, 0, yyy.width, yyy.height);
 }
 
 black.onclick = function() {
@@ -37,6 +38,7 @@ red.onclick = function() {
 	green.classList.remove('active')
 	blue.classList.remove('active')
 }
+
 green.onclick = function() {
 	context.fillStyle = 'green'
 	context.strokeStyle = 'green'
@@ -46,6 +48,7 @@ green.onclick = function() {
 	blue.classList.remove('active')
 
 }
+
 blue.onclick = function() {
 	context.fillStyle = 'blue'
 	context.strokeStyle = 'blue'
@@ -81,15 +84,15 @@ function drawCircle(x, y, redius) {
 }
 
 function drawLine(x1, y1, x2, y2) {
-	
+
 	context.beginPath();
 	context.lineWidth = 5
 	context.moveTo(x1, y1)
-	
+
 	context.lineTo(x2, y2)
 	context.stroke()
 	context.closePath()
-	
+
 }
 
 
@@ -119,7 +122,7 @@ function listenMouse(yyy) {
 
 		}
 		canvas.ontouchmove = function(aaa) {
-			
+
 			var x = aaa.touches[0].clientX
 			var y = aaa.touches[0].clientY
 			if (!painting) {
@@ -174,8 +177,8 @@ function listenMouse(yyy) {
 					"x": x,
 					"y": y
 				}
-			drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
-			lastPoint = newPoint	
+				drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+				lastPoint = newPoint
 			}
 
 		}
@@ -215,11 +218,11 @@ function listenMouse(yyy) {
 				"x": x,
 				"y": y
 			}
-		drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
-		lastPoint = newPoint
+			drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+			lastPoint = newPoint
 
 		}
-		
+
 	}
 
 	yyy.onmouseup = function(aaa) {
