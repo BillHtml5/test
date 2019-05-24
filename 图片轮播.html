@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="jquery-3.4.1.min.js"></script>
+		<style>
+			.images {
+				display: flex;
+				align-items: flex-start;
+				transition: transform 0.5s;
+			}
+
+			.images > img{
+				vertical-align: top;
+			}
+
+			.window{
+				
+				width: 1000px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="window">
+			<div class="images" id="images">
+				<img src="111.jpg" width="1000px" />
+				<img src="222.jpg" width="1000px" />
+				<img src="333.jpg" width="1000px" />
+			</div>
+
+		</div>
+		<button id="bt1">第一张</button>
+		<button id="bt2">第二张</button>
+		<button id="bt3">第三张</button>
+
+
+		<script>
+			$(bt1).on('click', function(btnx) {
+				console.log("1")
+				$(images).css({
+					transform: 'translateX(0)'
+				})
+			})
+			$(bt2).on('click', function(btny) {
+				$(images).css({
+					transform: 'translateX(-1000px)'
+				})
+			})
+			$(bt3).on('click', function(btnz) {
+				$(images).css({
+					transform: 'translateX(-2000px)'
+				})
+			})
+		</script>
+	</body>
+</html>
