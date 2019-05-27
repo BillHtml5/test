@@ -5,9 +5,20 @@
 		<title></title>
 		<script src="jquery-3.4.1.min.js"></script>
 		<style>
-			.images {display: flex;align-items: flex-start;transition: transform 0.5s;}
-			.images>img {vertical-align: top;}
-			.window {width: 1000px;overflow: hidden;}
+			.images {
+				display: flex;
+				align-items: flex-start;
+				transition: transform 0.5s;
+			}
+
+			.images>img {
+				vertical-align: top;
+			}
+
+			.window {
+				width: 1000px;
+				overflow: hidden;
+			}
 		</style>
 	</head>
 	<body>
@@ -18,27 +29,24 @@
 				<img src="333.jpg" width="1000px" />
 			</div>
 		</div>
-		<button id="bt1">第一张</button>
-		<button id="bt2">第二张</button>
-		<button id="bt3">第三张</button>
-		
+		<span id="buttons">
+			<span>第一张</span>
+			<span>第二张</span>
+			<span>第三张</span>
+		</span>
 		<script>
-			$(bt1).on('click', function(btnx) {
-				console.log("1")
-				$(images).css({
-					transform: 'translateX(0)'
+			
+			var allButtons = $('#buttons>span')
+			for (let i = 0; i < allButtons.length; i++) {
+				$(allButtons[i]).on('click',function(x){
+					var index = $(x.currentTarget).index();
+					var n = index * -1000;
+					$('#images').css({
+						transform:'translate('+n+'px)'
+					})
 				})
-			})
-			$(bt2).on('click', function(btny) {
-				$(images).css({
-					transform: 'translateX(-1000px)'
-				})
-			})
-			$(bt3).on('click', function(btnz) {
-				$(images).css({
-					transform: 'translateX(-2000px)'
-				})
-			})
+			}
+			
 		</script>
 	</body>
 </html>
