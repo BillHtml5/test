@@ -46,6 +46,14 @@
 					})
 				})
 			}
+			var count = 0;
+			var size = allButtons.length;
+			allButtons.eq(count%size).trigger('click');
+			setInterval(()=>{
+				count +=1;
+				allButtons.eq(count%size).trigger('click');
+			},1000)
+			
 			
 		</script>
 	</body>
