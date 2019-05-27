@@ -5,20 +5,9 @@
 		<title></title>
 		<script src="jquery-3.4.1.min.js"></script>
 		<style>
-			.images {
-				display: flex;
-				align-items: flex-start;
-				transition: transform 0.5s;
-			}
-
-			.images>img {
-				vertical-align: top;
-			}
-
-			.window {
-				width: 1000px;
-				overflow: hidden;
-			}
+			.images {display: flex;align-items: flex-start;transition: transform 0.5s;}
+			.images>img {vertical-align: top;}
+			.window {width: 1000px;overflow: hidden;}
 		</style>
 	</head>
 	<body>
@@ -28,13 +17,11 @@
 				<img src="222.jpg" width="1000px" />
 				<img src="333.jpg" width="1000px" />
 			</div>
-
 		</div>
 		<button id="bt1">第一张</button>
 		<button id="bt2">第二张</button>
 		<button id="bt3">第三张</button>
-
-
+		
 		<script>
 			$(bt1).on('click', function(btnx) {
 				console.log("1")
