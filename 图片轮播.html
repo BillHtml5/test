@@ -19,6 +19,9 @@
 				width: 1000px;
 				overflow: hidden;
 			}
+			.red{
+				color: #FF0000;
+			}
 		</style>
 	</head>
 	<body>
@@ -30,31 +33,54 @@
 			</div>
 		</div>
 		<span id="buttons">
-			<span>第一张</span>
-			<span>第二张</span>
-			<span>第三张</span>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
 		</span>
 		<script>
 			
 			var allButtons = $('#buttons>span')
+			
 			for (let i = 0; i < allButtons.length; i++) {
-				$(allButtons[i]).on('click',function(x){
+				$(allButtons[i]).on('click', function(x) {
 					var index = $(x.currentTarget).index();
 					var n = index * -1000;
 					$('#images').css({
-						transform:'translate('+n+'px)'
+						transform: 'translate(' + n + 'px)'
 					})
+					count = index;			
+					activeButton(allButtons.eq(count))
 				})
 			}
+			
 			var count = 0;
 			var size = allButtons.length;
-			allButtons.eq(count%size).trigger('click');
-			setInterval(()=>{
-				count +=1;
-				allButtons.eq(count%size).trigger('click');
-			},1000)
+			playSlide(count % size);
+			var timeId =setTime();
+
+			$('.window').on('mouseenter', function() {
+				window.clearInterval(timeId)
+			})
 			
+			$('.window').on('mouseleave', function() {
+				timeId = setTime()
+			})
 			
+			//简单封装button样式
+			function activeButton($button){
+				$button.addClass('red').siblings('.red').removeClass('red');
+			}
+			//轮播滑动
+			function playSlide(index){
+				allButtons.eq(index).trigger('click');
+			}
+			//设置闹钟
+			function setTime(){
+				return setInterval(() => {
+					count += 1;
+					playSlide(count % size);	
+				}, 2000)
+			}		
 		</script>
 	</body>
 </html>
