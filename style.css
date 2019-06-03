@@ -2,8 +2,8 @@
 *{box-sizing: border-box;}
 
 .window{
-	width: 600px;
-	height: 300px;
+	width: 1000px;
+	height: 600px;
 	margin: 20px auto;
 	overflow: hidden;
 }
@@ -12,6 +12,7 @@
 }
 .images>img{
 	width: 100%;
+	transform: all 0.3s;
 }
 
 .images>img:nth-child(1){
