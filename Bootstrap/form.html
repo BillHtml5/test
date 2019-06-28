@@ -5,46 +5,55 @@
 		<title>登录表单页面</title>
 		<meta name="viewport" content="width=device,initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+		
 	</head>
 	<body>
-		<!--form-inline 类可使其内容左对齐并且表现为 inline-block 级别的控件 -->
-		<!--form-horizontal 类，并联合使用 Bootstrap 预置的栅格类，可以将 label 标签和控件组水平并排布局 -->
-		<form class="form-horizontal">
-			<div class="form-group">
-				<!-- class="sr-only"隐藏label内容 -->
-				<label class="col-sm-4 offset-4 control-label" for="exampleInputEmail">邮箱</label>
-				<div class="col-sm-4 offset-4">
-					<input type="email" class="form-control" id="exampleInputEmail" placeholder="填写邮箱地址" />
+		<div class="container div-center">
+			<h1 class="col-sm-4" style="margin-top: 100px;">Bootstrap Login</h1>
+
+			<div class="container" style="margin-top: 50px;>
+			<!--form-inline 类可使其内容左对齐并且表现为 inline-block 级别的控件 -->
+			<!--form-horizontal 类，并联合使用 Bootstrap 预置的栅格类，可以将 label 标签和控件组水平并排布局 -->
+			<form class="
+			 form-horizontal";>
+				<div class="form-group">
+					<!-- class="sr-only"隐藏label内容 -->
+					<label class="col-sm-4 control-label" for="exampleInputEmail">邮箱</label>
+					<div class="col-sm-4">
+						<input type="email" class="form-control" id="exampleInputEmail" placeholder="填写邮箱地址" />
+					</div>
+
 				</div>
 
-			</div>
-
-			<div class="form-group">
-				<label class="col-sm-4 offset-4 control-label" exampleInputEmail">密码</label>
-				<div class="col-sm-4 offset-4">
-					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码" />
+				<div class="form-group">
+					<label class="col-sm-4 control-label" exampleInputEmail">密码</label>
+					<div class="col-sm-4">
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码" />
+					</div>
 				</div>
-			</div>
-			<!-- <div class="form-group">
+				<!-- <div class="form-group">
 				<label class="sr-only for="exampleInputEmail">上传文件</label>
 				<input type="file" name="" id="exampleInputFile" value="" />
 				<p class="help-block">Example block-level help text here.</p>
 			</div> -->
-			<div class="form-group">
-				<div class="col-sm-4 offset-4">
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> 记住我
-						</label>
+				<div class="form-group">
+					<div class="col-sm-4">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> 记住我
+							</label>
+						</div>
 					</div>
 				</div>
+
+				<div class="form-group">
+					<div class="col-sm-2">
+						<button type="submit" class="btn btn-lg btn-info">登录</button>
+					</div>
+				</div>
+				</form>
 			</div>
 
-			<div class="form-group">
-				<div class="col-sm-2 offset-4">
-					<button type="submit" class="btn btn-lg btn-info">登录</button>
-				</div>
-			</div>
-		</form>
+		</div>
 	</body>
 </html>
