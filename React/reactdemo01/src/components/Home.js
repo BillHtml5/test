@@ -4,14 +4,9 @@ class Home extends Component{
 	
 	
 	render(){
-		return(
-		
-		<div>hello react</div>
-		
+		return(		
+		<div>hello react</div>		
 		)
-	}
-	
+	}	
 }
-
-
 export default Home;

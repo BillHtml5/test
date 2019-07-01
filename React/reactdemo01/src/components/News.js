@@ -7,10 +7,16 @@ class News extends React.Component{
 		super(props);// 用于父子组件传值
 	}
 	
-	render(){
-		
+	render(){		
 		return(
-		<div>这是个消息</div>
+		<div>
+			<ul>
+				<li>列表1111</li>
+				<li>列表1111</li>
+				<li>列表1111</li>
+				<li>列表1111</li>
+			</ul>
+		</div>
 		)
 	}
 }
