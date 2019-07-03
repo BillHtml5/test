@@ -17,7 +17,6 @@ class Test extends React.Component{
 		<div>
 			<h1>{this.state.msg}</h1>
 		</div>
-		
 		)
 	}
 }
