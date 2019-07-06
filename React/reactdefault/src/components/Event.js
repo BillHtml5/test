@@ -29,7 +29,17 @@ class Event extends React.Component {
 		alert(this.state.msg1)
 		}
 		
+	setMsg1=()=>{
+		this.setState({
+			msg1:'更改后的msg1'
+		})
+	}
 	
+	setMsg2=(str)=>{
+		this.setState({
+			msg1:str
+		})
+	}
 	
 	render() {
 		return ( 
@@ -43,7 +53,15 @@ class Event extends React.Component {
 			<button onClick = {this.getMsg2} >获取数据--第2种改变this指向的方法< /button>
 			<hr/>
 			<button onClick = {this.getMsg3} >获取数据--第3种改变this指向的方法< /button>
+			<hr/>
+			
+			<button onClick = {this.setMsg1} >更改state数据< /button>
+			<hr/>
+			
+			<button onClick = {this.setMsg2.bind(this,'第二次更改的msg1')} >传值更改state数据< /button>
+			
 			</div>
+			
 		)
 
 	}

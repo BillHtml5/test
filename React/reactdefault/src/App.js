@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
      react根目录
+	
+		<Home></Home>	 
+		<News></News>
 		<Event ></Event >
-		 <Home></Home>
-		 
-		 <News></News>
     </div>
   );
 }
