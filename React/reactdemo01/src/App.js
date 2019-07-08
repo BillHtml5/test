@@ -7,8 +7,8 @@ import Test from './components/Test'
 function App() {
   return (
     <div className="App">
-     React 根目录
-
+     React的根目录
+			//引入组件
 		 <Test></Test>
     </div>
   );
