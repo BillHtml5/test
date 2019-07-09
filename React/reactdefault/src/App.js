@@ -9,8 +9,8 @@ function App() {
     <div className="App">
      react根目录
 	
-		<Home></Home>	 
-		<News></News>
+		//<Home></Home>	 
+		//<News></News>
 		<Event ></Event >
     </div>
   );
