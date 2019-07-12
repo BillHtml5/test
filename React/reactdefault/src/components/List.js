@@ -7,6 +7,26 @@ class List extends React.Component {
 			username:''
 		};
     }
+    inputChange=()=>{
+
+        /*
+            获取dom节点
+
+                1、给元素定义ref属性
+                    <input ref="username" />
+
+                2、通过this.refs.username 获取dom节点
+
+        
+        */
+
+        let val=this.refs.username.value;
+
+        this.setState({
+            username:val
+        })
+
+    }
 
     render() {
         return (
@@ -18,7 +38,7 @@ class List extends React.Component {
                 3、把表单输入的值赋值给username              this.setState({})
                 4、点击按钮的时候获取 state里面的username     this.state.username
                  */}
-				 
+                 <input ref="username" onChange={this.inputChange}/> <button onClick={this.getInput}>获取input的值</button>	 
             </div>
         );
     }
