@@ -38,7 +38,9 @@ class List extends React.Component {
                 3、把表单输入的值赋值给username              this.setState({})
                 4、点击按钮的时候获取 state里面的username     this.state.username
                  */}
+                 
                  <input ref="username" onChange={this.inputChange}/> <button onClick={this.getInput}>获取input的值</button>	 
+                 
             </div>
         );
     }
