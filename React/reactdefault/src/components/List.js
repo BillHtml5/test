@@ -27,6 +27,10 @@ class List extends React.Component {
         })
 
     }
+    getInput=()=>{
+
+        alert(this.state.username);
+    }
 
     render() {
         return (
@@ -39,7 +43,8 @@ class List extends React.Component {
                 4、点击按钮的时候获取 state里面的username     this.state.username
                  */}
                  
-                 <input ref="username" onChange={this.inputChange}/> <button onClick={this.getInput}>获取input的值</button>	 
+                 <input ref="username" onChange={this.inputChange}/> 
+                 <button onClick={this.getInput}>获取input的值</button>	 
                  
             </div>
         );
