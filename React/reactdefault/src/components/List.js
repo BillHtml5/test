@@ -31,6 +31,27 @@ class List extends React.Component {
 
         alert(this.state.username);
     }
+       //键盘事件
+    inputKeyUp=(e)=>{
+
+        console.log(e.keyCode);
+
+
+        if(e.keyCode==13){
+
+            alert(e.target.value);
+        }
+
+    }
+    inputonKeyDown=(e)=>{
+
+        console.log(e.keyCode);
+
+        if(e.keyCode==13){
+
+            alert(e.target.value);
+        }
+    }
 
     render() {
         return (
@@ -45,7 +66,15 @@ class List extends React.Component {
                  
                  <input ref="username" onChange={this.inputChange}/> 
                  <button onClick={this.getInput}>获取input的值</button>	 
-                 
+                 <br /><br /> <hr />
+                
+
+                 <h2>键盘事件</h2>
+ 
+                 <input onKeyUp={this.inputKeyUp}/>
+                 <br /><br />
+
+                <input onKeyDown={this.inputonKeyDown}/>
             </div>
         );
     }
