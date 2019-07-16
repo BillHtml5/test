@@ -22,7 +22,7 @@ class List extends React.Component {
 
         let val=this.refs.username.value;
 
-        this.setState({
+            this.setState({
             username:val
         })
 
