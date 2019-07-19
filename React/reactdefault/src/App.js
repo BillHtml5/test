@@ -5,7 +5,10 @@ import './assets/css/App.css';
 // import News from './components/News';
 // import Event from './components/Event';
 // import List from './components/List';
-import TodoList from './components/TodoList';
+//import TodoList from './components/TodoList';
+import ReactForm from './components/ReactForm';
+
+
 
 function App() {
   return (
@@ -14,11 +17,13 @@ function App() {
       {/*		<Home></Home>	 
       <News></News>
       <Event ></Event > 
-      <List></List> */}
-    
+      <List></List> 
       <TodoList></TodoList>
-
-        
+    */}
+    
+     
+      <ReactForm></ReactForm>
+       
     </div>
   );
 }
